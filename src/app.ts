@@ -1,6 +1,7 @@
 // src/app.ts
 import express, { Request, Response, NextFunction } from "express";
 import policyRouter from "./routes/policy";
+import { errorHandler } from "./Util/util";
 import dotenv from "dotenv";
 
 const app = express();
@@ -14,20 +15,6 @@ app.use("/policies", policyRouter);
 app.get("/", (req, res) => {
   res.send("Hello, TypeScript with Express!");
 });
-
-function errorHandler(
-  err: any,
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
-  console.error("Global Error Handler:", err);
-  res.status(err.status || 500).json({
-    error: {
-      message: err.message || "Internal Server Error",
-    },
-  });
-}
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
