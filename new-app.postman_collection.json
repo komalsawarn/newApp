@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "b0a86581-c754-489e-b294-e58327822f60",
+		"name": "new-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4497216"
+	},
+	"item": [
+		{
+			"name": "Returns all policies belonging to the specified customer.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/policies/?customerName=Fiona Green",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policies",
+						""
+					],
+					"query": [
+						{
+							"key": "customerName",
+							"value": "Fiona Green",
+							"description": "required parameter"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Returns all policies belonging to the specified customer.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/policies/?customerName=Bob Johnson",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"policies",
+								""
+							],
+							"query": [
+								{
+									"key": "customerName",
+									"value": "Bob Johnson",
+									"description": "required parameter"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "371"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"173-Was234SDRqM5bz4KXxbJtiUzEWw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Jul 2025 21:04:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"pol_002\",\n        \"productId\": \"prod_pet\",\n        \"customerName\": \"Bob Johnson\",\n        \"startDate\": \"2024-05-15\",\n        \"endDate\": \"2025-05-15\",\n        \"premium\": 160,\n        \"status\": \"active\",\n        \"createdAt\": \"2024-05-15T08:00:00Z\",\n        \"product\": {\n            \"id\": \"prod_pet\",\n            \"name\": \"Pet Insurance\",\n            \"category\": \"pet\",\n            \"description\": \"Covers vet bills and accident protection for pets.\",\n            \"basePrice\": 150,\n            \"createdAt\": \"2024-01-01T10:00:00Z\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Returns a single policy by its ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/policy/pol_001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policy",
+						"pol_001"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Returns a single policy by its ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/policies/pol_006",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"policies",
+								"pol_006"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "370"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"172-/e9f9RPI9fMxj2jbCvFC+jFRLLk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Jul 2025 21:03:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"pol_006\",\n    \"productId\": \"prod_pet\",\n    \"customerName\": \"Fiona sonali\",\n    \"startDate\": \"2025-03-01\",\n    \"endDate\": \"2026-02-01\",\n    \"premium\": 155,\n    \"status\": \"active\",\n    \"createdAt\": \"2025-02-01T11:00:00Z\",\n    \"product\": {\n        \"id\": \"prod_pet\",\n        \"name\": \"Pet Insurance\",\n        \"category\": \"pet\",\n        \"description\": \"Covers vet bills and accident protection for pets.\",\n        \"basePrice\": 150,\n        \"createdAt\": \"2024-01-01T10:00:00Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update an existing policy by ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productId\": \"prod_pet\",\n    \"customerName\": \"Fiona sonal11\",\n    \"startDate\": \"2025-03-01\",\n    \"endDate\": \"2026-02-01\",\n    \"premium\": 155,\n    \"status\": \"active\",\n    \"createdAt\": \"2025-02-01T11:00:00Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/policies/pol_010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policies",
+						"pol_010"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update an existing policy by ID.",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"prod_pet\",\n    \"customerName\": \"Fiona sonali\",\n    \"startDate\": \"2025-03-01\",\n    \"endDate\": \"2026-02-01\",\n    \"premium\": 155,\n    \"status\": \"active\",\n    \"createdAt\": \"2025-02-01T11:00:00Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/policies/pol_006",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"policies",
+								"pol_006"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "370"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"172-/e9f9RPI9fMxj2jbCvFC+jFRLLk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Jul 2025 21:04:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"pol_006\",\n    \"productId\": \"prod_pet\",\n    \"customerName\": \"Fiona sonali\",\n    \"startDate\": \"2025-03-01\",\n    \"endDate\": \"2026-02-01\",\n    \"premium\": 155,\n    \"status\": \"active\",\n    \"createdAt\": \"2025-02-01T11:00:00Z\",\n    \"product\": {\n        \"id\": \"prod_pet\",\n        \"name\": \"Pet Insurance\",\n        \"category\": \"pet\",\n        \"description\": \"Covers vet bills and accident protection for pets.\",\n        \"basePrice\": 150,\n        \"createdAt\": \"2024-01-01T10:00:00Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete an existing policy by ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/policies/pol_010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policies",
+						"pol_010"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update an existing policy by ID. Copy",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/policies/pol_0112",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"policies",
+								"pol_0112"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "386"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"182-GmyE/KUdvByG/uiX+19uPHdlN5E\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Jul 2025 21:05:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"pol_0112\",\n    \"productId\": \"prod_travel\",\n    \"customerName\": \"Test abc1\",\n    \"startDate\": \"2025-07-01\",\n    \"endDate\": \"2025-07-20\",\n    \"premium\": 85,\n    \"status\": \"active\",\n    \"createdAt\": \"2025-06-15T10:00:00Z\",\n    \"product\": {\n        \"id\": \"prod_travel\",\n        \"name\": \"Travel Insurance\",\n        \"category\": \"travel\",\n        \"description\": \"Coverage for trips, cancellations, and emergencies abroad.\",\n        \"basePrice\": 80,\n        \"createdAt\": \"2024-01-01T10:00:00Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create a new policy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "AKSO(&RUF*YHRFI)",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"pol_0112\",\n    \"productId\": \"prod_travel\",\n    \"customerName\": \"Test abc1\",\n    \"startDate\": \"2025-07-01\",\n    \"endDate\": \"2025-07-20\",\n    \"premium\": 85,\n    \"status\": \"active\",\n    \"createdAt\": \"2025-06-15T10:00:00Z\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/policies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"policies"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update an existing policy by ID. Copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "AKSO(&RUF*YHRFI)",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"pol_0112\",\n    \"productId\": \"prod_travel\",\n    \"customerName\": \"Test abc1\",\n    \"startDate\": \"2025-07-01\",\n    \"endDate\": \"2025-07-20\",\n    \"premium\": 85,\n    \"status\": \"active\",\n    \"createdAt\": \"2025-06-15T10:00:00Z\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/policies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"policies"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "386"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"182-GmyE/KUdvByG/uiX+19uPHdlN5E\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Jul 2025 21:04:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"pol_0112\",\n    \"productId\": \"prod_travel\",\n    \"customerName\": \"Test abc1\",\n    \"startDate\": \"2025-07-01\",\n    \"endDate\": \"2025-07-20\",\n    \"premium\": 85,\n    \"status\": \"active\",\n    \"createdAt\": \"2025-06-15T10:00:00Z\",\n    \"product\": {\n        \"id\": \"prod_travel\",\n        \"name\": \"Travel Insurance\",\n        \"category\": \"travel\",\n        \"description\": \"Coverage for trips, cancellations, and emergencies abroad.\",\n        \"basePrice\": 80,\n        \"createdAt\": \"2024-01-01T10:00:00Z\"\n    }\n}"
+				}
+			]
+		}
+	]
+}

@@ -52,8 +52,8 @@
   {
     "id": "pol_006",
     "productId": "prod_pet",
-    "customerName": "Fiona Green",
-    "startDate": "2025-02-01",
+    "customerName": "Fiona sonali",
+    "startDate": "2025-03-01",
     "endDate": "2026-02-01",
     "premium": 155,
     "status": "active",
@@ -90,19 +90,9 @@
     "createdAt": "2023-09-01T09:00:00Z"
   },
   {
-    "id": "pol_0012",
-    "productId": "prod_pet",
-    "customerName": "Fiona sonal11",
-    "startDate": "2025-02-01",
-    "endDate": "2026-02-01",
-    "premium": 155,
-    "status": "active",
-    "createdAt": "2025-02-01T11:00:00Z"
-  },
-  {
-    "id": "pol_011",
+    "id": "pol_010",
     "productId": "prod_travel",
-    "customerName": "Test abc",
+    "customerName": "Julia Black",
     "startDate": "2025-07-01",
     "endDate": "2025-07-20",
     "premium": 95,
@@ -112,30 +102,10 @@
   {
     "id": "pol_0111",
     "productId": "prod_travel",
-    "customerName": "Test abc",
+    "customerName": "Test abc1",
     "startDate": "2025-07-01",
     "endDate": "2025-07-20",
-    "premium": "95",
-    "status": "active",
-    "createdAt": "2025-06-15T10:00:00Z"
-  },
-  {
-    "id": "pol_0112",
-    "productId": "prod_travel",
-    "customerName": "Test abc",
-    "startDate": "2025-07-01",
-    "endDate": "2025-07-20",
-    "premium": "95",
-    "status": "active",
-    "createdAt": "2025-06-15T10:00:00Z"
-  },
-  {
-    "idddddddd": "pol_0112",
-    "productId": "prod_travel",
-    "customerName": "Test abc",
-    "startDate": "2025-07-01",
-    "endDate": "2025-07-20",
-    "premium": "95",
+    "premium": 85,
     "status": "active",
     "createdAt": "2025-06-15T10:00:00Z"
   }

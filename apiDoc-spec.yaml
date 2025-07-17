@@ -1,0 +1,459 @@
+openapi: 3.0.0
+info:
+    title: new-app
+    version: 1.0.0
+    description: ""
+servers:
+    - url: localhost
+paths:
+    /policies:
+        parameters: []
+        get:
+            summary: Returns all policies belonging to the specified customer.
+            parameters:
+                - name: customerName
+                  in: query
+                  required: true
+                  description: required parameter
+                  example: Fiona Green
+                  schema:
+                      type: string
+            responses:
+                "200":
+                    headers:
+                        X-Powered-By:
+                            schema:
+                                type: string
+                            example: Express
+                        Content-Type:
+                            schema:
+                                type: string
+                            example: application/json; charset=utf-8
+                        Content-Length:
+                            schema:
+                                type: integer
+                            example: "371"
+                        ETag:
+                            schema:
+                                type: string
+                            example: W/"173-Was234SDRqM5bz4KXxbJtiUzEWw"
+                        Date:
+                            schema:
+                                type: string
+                            example: Thu, 17 Jul 2025 21:04:21 GMT
+                        Connection:
+                            schema:
+                                type: string
+                            example: keep-alive
+                        Keep-Alive:
+                            schema:
+                                type: string
+                            example: timeout=5
+                    description: Returns all policies belonging to the specified customer.
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                        id:
+                                            type: string
+                                        productId:
+                                            type: string
+                                        customerName:
+                                            type: string
+                                        startDate:
+                                            type: string
+                                            format: date
+                                        endDate:
+                                            type: string
+                                            format: date
+                                        premium:
+                                            type: integer
+                                        status:
+                                            type: string
+                                        createdAt:
+                                            type: string
+                                            format: date-time
+                                        product:
+                                            type: object
+                                            properties:
+                                                id:
+                                                    type: string
+                                                name:
+                                                    type: string
+                                                category:
+                                                    type: string
+                                                description:
+                                                    type: string
+                                                basePrice:
+                                                    type: integer
+                                                createdAt:
+                                                    type: string
+                                                    format: date-time
+    /policy/pol_001:
+        parameters: []
+        get:
+            summary: Returns a single policy by its ID
+            parameters: []
+            responses:
+                "200":
+                    headers:
+                        X-Powered-By:
+                            schema:
+                                type: string
+                            example: Express
+                        Content-Type:
+                            schema:
+                                type: string
+                            example: application/json; charset=utf-8
+                        Content-Length:
+                            schema:
+                                type: integer
+                            example: "370"
+                        ETag:
+                            schema:
+                                type: string
+                            example: W/"172-/e9f9RPI9fMxj2jbCvFC+jFRLLk"
+                        Date:
+                            schema:
+                                type: string
+                            example: Thu, 17 Jul 2025 21:03:37 GMT
+                        Connection:
+                            schema:
+                                type: string
+                            example: keep-alive
+                        Keep-Alive:
+                            schema:
+                                type: string
+                            example: timeout=5
+                    description: Returns a single policy by its ID
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    productId:
+                                        type: string
+                                    customerName:
+                                        type: string
+                                    startDate:
+                                        type: string
+                                        format: date
+                                    endDate:
+                                        type: string
+                                        format: date
+                                    premium:
+                                        type: integer
+                                    status:
+                                        type: string
+                                    createdAt:
+                                        type: string
+                                        format: date-time
+                                    product:
+                                        type: object
+                                        properties:
+                                            id:
+                                                type: string
+                                            name:
+                                                type: string
+                                            category:
+                                                type: string
+                                            description:
+                                                type: string
+                                            basePrice:
+                                                type: integer
+                                            createdAt:
+                                                type: string
+                                                format: date-time
+    /policies/pol_010:
+        parameters: []
+        put:
+            summary: Update an existing policy by ID
+            parameters: []
+            responses:
+                "200":
+                    headers:
+                        X-Powered-By:
+                            schema:
+                                type: string
+                            example: Express
+                        Content-Type:
+                            schema:
+                                type: string
+                            example: application/json; charset=utf-8
+                        Content-Length:
+                            schema:
+                                type: integer
+                            example: "370"
+                        ETag:
+                            schema:
+                                type: string
+                            example: W/"172-/e9f9RPI9fMxj2jbCvFC+jFRLLk"
+                        Date:
+                            schema:
+                                type: string
+                            example: Thu, 17 Jul 2025 21:04:35 GMT
+                        Connection:
+                            schema:
+                                type: string
+                            example: keep-alive
+                        Keep-Alive:
+                            schema:
+                                type: string
+                            example: timeout=5
+                    description: Update an existing policy by ID.
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    productId:
+                                        type: string
+                                    customerName:
+                                        type: string
+                                    startDate:
+                                        type: string
+                                        format: date
+                                    endDate:
+                                        type: string
+                                        format: date
+                                    premium:
+                                        type: integer
+                                    status:
+                                        type: string
+                                    createdAt:
+                                        type: string
+                                        format: date-time
+                                    product:
+                                        type: object
+                                        properties:
+                                            id:
+                                                type: string
+                                            name:
+                                                type: string
+                                            category:
+                                                type: string
+                                            description:
+                                                type: string
+                                            basePrice:
+                                                type: integer
+                                            createdAt:
+                                                type: string
+                                                format: date-time
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                productId:
+                                    type: string
+                                customerName:
+                                    type: string
+                                startDate:
+                                    type: string
+                                    format: date
+                                endDate:
+                                    type: string
+                                    format: date
+                                premium:
+                                    type: integer
+                                status:
+                                    type: string
+                                createdAt:
+                                    type: string
+                                    format: date-time
+        delete:
+            summary: Delete an existing policy by ID
+            parameters: []
+            responses:
+                "200":
+                    headers:
+                        X-Powered-By:
+                            schema:
+                                type: string
+                            example: Express
+                        Content-Type:
+                            schema:
+                                type: string
+                            example: application/json; charset=utf-8
+                        Content-Length:
+                            schema:
+                                type: integer
+                            example: "386"
+                        ETag:
+                            schema:
+                                type: string
+                            example: W/"182-GmyE/KUdvByG/uiX+19uPHdlN5E"
+                        Date:
+                            schema:
+                                type: string
+                            example: Thu, 17 Jul 2025 21:05:18 GMT
+                        Connection:
+                            schema:
+                                type: string
+                            example: keep-alive
+                        Keep-Alive:
+                            schema:
+                                type: string
+                            example: timeout=5
+                    description: Update an existing policy by ID. Copy
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    productId:
+                                        type: string
+                                    customerName:
+                                        type: string
+                                    startDate:
+                                        type: string
+                                        format: date
+                                    endDate:
+                                        type: string
+                                        format: date
+                                    premium:
+                                        type: integer
+                                    status:
+                                        type: string
+                                    createdAt:
+                                        type: string
+                                        format: date-time
+                                    product:
+                                        type: object
+                                        properties:
+                                            id:
+                                                type: string
+                                            name:
+                                                type: string
+                                            category:
+                                                type: string
+                                            description:
+                                                type: string
+                                            basePrice:
+                                                type: integer
+                                            createdAt:
+                                                type: string
+                                                format: date-time
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+    /policies:
+        parameters: []
+        post:
+            summary: Create a new policy
+            parameters:
+                - name: x-api-key
+                  in: header
+                  required: false
+                  example: AKSO(&RUF*YHRFI)
+                  schema:
+                      type: string
+            responses:
+                "201":
+                    headers:
+                        X-Powered-By:
+                            schema:
+                                type: string
+                            example: Express
+                        Content-Type:
+                            schema:
+                                type: string
+                            example: application/json; charset=utf-8
+                        Content-Length:
+                            schema:
+                                type: integer
+                            example: "386"
+                        ETag:
+                            schema:
+                                type: string
+                            example: W/"182-GmyE/KUdvByG/uiX+19uPHdlN5E"
+                        Date:
+                            schema:
+                                type: string
+                            example: Thu, 17 Jul 2025 21:04:56 GMT
+                        Connection:
+                            schema:
+                                type: string
+                            example: keep-alive
+                        Keep-Alive:
+                            schema:
+                                type: string
+                            example: timeout=5
+                    description: Update an existing policy by ID. Copy
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    id:
+                                        type: string
+                                    productId:
+                                        type: string
+                                    customerName:
+                                        type: string
+                                    startDate:
+                                        type: string
+                                        format: date
+                                    endDate:
+                                        type: string
+                                        format: date
+                                    premium:
+                                        type: integer
+                                    status:
+                                        type: string
+                                    createdAt:
+                                        type: string
+                                        format: date-time
+                                    product:
+                                        type: object
+                                        properties:
+                                            id:
+                                                type: string
+                                            name:
+                                                type: string
+                                            category:
+                                                type: string
+                                            description:
+                                                type: string
+                                            basePrice:
+                                                type: integer
+                                            createdAt:
+                                                type: string
+                                                format: date-time
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                id:
+                                    type: string
+                                productId:
+                                    type: string
+                                customerName:
+                                    type: string
+                                startDate:
+                                    type: string
+                                    format: date
+                                endDate:
+                                    type: string
+                                    format: date
+                                premium:
+                                    type: integer
+                                status:
+                                    type: string
+                                createdAt:
+                                    type: string
+                                    format: date-time
